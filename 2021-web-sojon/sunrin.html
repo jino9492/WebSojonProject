@@ -61,10 +61,19 @@
       grid-area: banner;
     }
     #notice1{
+      height: 298px;
       grid-area: notice1;
     }
     #notice2{
+      position: absolute;
+      bottom: 0;
+      height: 298px;
       grid-area: notice2;
+    }
+    .notice{
+      position: relative;
+      height: 610px;
+      width: 308px;
     }
     #calendar{
       grid-area: calendar;
@@ -84,13 +93,9 @@
       width: 950px;
       margin: 0 auto;
     }
-    #notice1{
-      margin-bottom: 5%;
-    }
     .listbox{
       border: 2px solid #e7e7e7;
-      margin-left: 5px;
-      padding: 5% 5% 5% 5%;
+      padding: 5%;
     }
     .listbox>ul{
       list-style: none;
@@ -105,13 +110,31 @@
       font-size: 75%;
     }
     .listbox>ul>li{
-      margin-bottom: 5%;
+      position: relative;
+      display: flex;
+      height: 26px;
+      width: 266px;
+      padding: 5px 80px 5px 0px;
+      margin-bottom: 5px;
+    }
+    .listbox>ul>li>:first-child{
+      display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      flex: 1;
     }
     .new>:nth-child(2){
-      background-color: #dfa21f;
+      background-color: #da9d1c;
       color:white;
-      padding: 0.2% 2% 0.2% 2%;
+      padding: 0.2% 2%;
     }
+    .listbox>ul>li>:last-child{
+      position: absolute;
+      right: 0;
+    }
+    .listbox>ul>li:not(.new)>:nth-child(2){
+      display : none;
+      color : blue;
+    }
+
   </style>
 </head>
 
@@ -124,7 +147,7 @@
       <button>로그인</button>
       <button>회원가입</button>
       <input type="text" id="search">
-      <label for="search"><img src="/assets/btn_search.gif" alt=""></label>
+      <label for="search"><img src="./assets/btn_search.gif" alt=""></label>
     </div>
   </header>
   <nav>
@@ -168,56 +191,58 @@
   </nav>
   <main>
     <img src="./assets/main-banner.png" alt="" id="banner">
-    <div class="listbox" id="notice1">
+    <div class="notice">
+      <div class="listbox" id="notice1">
       <h1>공지/행사</h1>
       <ul>
         <li class="new">
-          <span>공지사항 1 - 어쩌구 저쩌구...</span>
+          <span>공지사항 1 - 어쩌구 저쩌구 어쩌구 저쩌구</span>
           <span>New</span>
           <time>2021-06-04</time>
         </li>
         <li class="new">
-          <span>공지사항 2 - 어쩌구 저쩌구...</span>
+          <span>공지사항 2 - 어쩌구 저쩌구 어쩌구 저쩌구</span>
           <span>New</span>
           <time>2021-05-28</time>
         </li>
         <li class="new">
-          <span>공지사항 3 - 어쩌구 저쩌구...</span>
+          <span>공지사항 3 - 어쩌구 저쩌구 어쩌구 저쩌구</span>
           <span>New</span>
           <time>2021-05-24</time>
         </li>
         <li class="new">
-          <span>공지사항 4 - 어쩌구 저쩌구...</span>
+          <span>공지사항 4 - 어쩌구 저쩌구 어쩌구 저쩌구</span>
           <span>New</span>
           <time>2021-05-21</time>
         </li>
       </ul>
-    </div>
-    <div class="listbox" id="notice2">
+      </div>
+      <div class="listbox" id="notice2">
       <h1>가정 통신문</h1>
       <ul>
         <li class="new">
-          <span>가정통신 1 - 어쩌구 저쩌구...</span>
+          <span>가정통신 1 - 어쩌구 저쩌구 어쩌구 저쩌구</span>
           <span>New</span>
           <time>2021-06-04</time>
         </li>
         <li class="new">
-          <span>가정통신 2 - 어쩌구 저쩌구...</span>
+          <span>가정통신 2 - 어쩌구 저쩌구 어쩌구 저쩌구</span>
           <span>New</span>
           <time>2021-05-28</time>
         </li>
         <li class="new">
-          <span>가정통신 3 - 어쩌구 저쩌구...</span>
+          <span>가정통신 3 - 어쩌구 저쩌구 어쩌구 저쩌구</span>
           <span>New</span>
           <time>2021-05-26</time>
         </li>
-        <li class="new">
-          <span>가정통신 4 - 어쩌구 저쩌구...</span>
+        <li>
+          <span>가정통신 4 - 어쩌구 저쩌구 어쩌구 저쩌구</span>
           <span>New</span>
           <time>2021-05-23</time>
         </li>
       </ul>
     </div>
+  </div>
     <div class="box" id="calendar">
       <h1>이달의 일정</h1>
       <div>
